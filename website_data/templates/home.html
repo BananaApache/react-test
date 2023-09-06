@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- <!– Load React Libraries –>
+    <!– Note: when deploying, replace “development.js” with “production.min.js”. –> -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>       
+    
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Axios CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Marked CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel" src="../static/js/test.js"></script>
+
+    <!-- <script type="text/babel" src="../static/App.js"></script> -->
+
+    <!-- <script type="text/babel">
+
+        axios.get('http://127.0.0.1:8000/api/todos')
+        .then(res => {
+            console.log(res.data)
+            data = res.data
+            this.setState({
+                details: data
+            })
+        })
+        .catch(err => { console.log(err) })
+        
+        function App() {
+            return (
+                <div>
+                    <h1>Hello</h1>
+                </div>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.querySelector("#root"))
+        root.render(
+            <App />
+        )
+    </script> -->
+
+    <!-- <script type="text/babel">
+        import './App.css';
+        import axios from 'axios'
+        import React from 'react'
+        import ReactDOM from 'react-dom/client';
+
+        class Home extends React.Component {
+            state = { details: [], }
+
+            componentDidMount() {
+                console.log("hello")
+                let data
+                axios.get('http://127.0.0.1:8000/api/todos')
+                .then(res => {
+                data = res.data
+                this.setState({
+                    details: data
+                })
+                })
+                .catch(err => { console.log(err) })
+            }
+
+            render() {
+                return (
+                    <div>
+                        <header>Data Generated From Django</header>
+                        <hr></hr>
+                        {this.state.details.map((output, id) => (
+                        <div key={id}>
+                            <h2>{output.title}</h2>
+                            <h3>{output.description}</h3>
+                            <h4>{output.completed}</h4>
+                        </div>
+                        ))}
+                    </div>
+                )
+            }
+        }
+
+        export default Home
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+            <React.StrictMode>
+                <Home />
+            </React.StrictMode>
+        );
+
+    </script> -->
+
+</body>
+</html>
